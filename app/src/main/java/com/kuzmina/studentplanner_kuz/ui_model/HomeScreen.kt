@@ -77,7 +77,9 @@ fun HomeScreen(
     onSubjectClick: (String) -> Unit,
     onProfileClick: () -> Unit,
     onSettingsClick: () -> Unit,
+    onRaspisanieClick: () -> Unit,
     modifier: Modifier = Modifier
+
 ) {
     Scaffold(
         topBar = {
@@ -98,9 +100,13 @@ fun HomeScreen(
                         )
                     }
                 }
+
+
+
             )
         }
     ) {
+
         paddingValues ->
         LazyColumn(
             modifier = modifier
@@ -109,6 +115,14 @@ fun HomeScreen(
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
+            item{
+                Button(
+                    onClick = { onRaspisanieClick()},
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text("Расписание")
+                }
+            }
             items(sampleSubjects) { subject ->
                 SubjectCard(
                     subject = subject,
