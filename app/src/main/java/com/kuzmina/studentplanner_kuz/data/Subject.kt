@@ -12,9 +12,6 @@ data class Subject (
 
 
 
-
-
-
 }
 val sampleSubjects = listOf(
     Subject(
